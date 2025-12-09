@@ -84,7 +84,7 @@ def inject_css():
     @keyframes pulse {0%, 100% {opacity: 1;} 50% {opacity: 0.4;}}
 
     /* Metric Cards */
-    .metrics-row {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-bottom: 0.4rem;}
+    .metrics-row {display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: -6rem 0.75rem 0.4rem; -0.25rem;}
     .metric-card {background: rgba(45, 55, 72, 0.9); border: 1px solid #2a2a4a; border-radius: 10px; padding: 0.65rem; border-top: 3px solid;}
     .metric-card.green { border-top-color: #1ed760; }
     .metric-card.purple { border-top-color: #a855f7; }
