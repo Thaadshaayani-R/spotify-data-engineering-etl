@@ -67,13 +67,13 @@ def inject_css():
 
     /* Header */
     .header-box {
-        font-size: 1.8rem;           /* smaller text */
+        font-size: 2.5rem;           /* smaller text */
         font-weight: bold;
         color: #FFFFFF;
         text-align: center;
         margin-bottom: 1rem;
         background: linear-gradient(90deg, #1f4e79, #2980b9);
-        padding: 0.5rem 0.5rem;      /* reduced padding */
+        padding: 0.75rem 0.5rem;      /* reduced padding */
         border-radius: 10px;
         margin: -5rem 0.5rem 0.5rem 0.5rem;  /* reduce top/bottom spacing */
     }
