@@ -88,7 +88,7 @@ def inject_css():
         padding: 0.8rem;
         border-radius: 8px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        margin: 0.3rem 0;
+        margin: 0.3rem 0 -0.5rem;
         text-align: center;
     }
 
