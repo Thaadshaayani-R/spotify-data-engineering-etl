@@ -73,7 +73,7 @@ def inject_css():
         text-align: center;
         margin-bottom: 1rem;
         background: linear-gradient(90deg, #1f4e79, #2980b9);
-        padding: 0.2rem 0.5rem;      /* reduced padding */
+        padding: 0.5rem 0.5rem;      /* reduced padding */
         border-radius: 10px;
         margin: -5rem 0.5rem 0.5rem 0.5rem;  /* reduce top/bottom spacing */
     }
