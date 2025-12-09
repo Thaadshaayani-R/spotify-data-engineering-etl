@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# Streamlit secrets
+streamlit_app/.streamlit/secrets.toml
+
+# Local database files (if generated)
+*.db
+
