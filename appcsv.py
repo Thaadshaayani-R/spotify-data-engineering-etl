@@ -77,7 +77,7 @@ def inject_css():
         border-radius: 10px;
         margin: -4rem 0.6rem 0.5rem 0.6rem;
     }
-    .header-title {font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0.8rem;}
+    .header-title {font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin: 0 0.6rem;}
     .header-sub {font-size: 1rem; color: #fff; margin-top: 2px;}
     .live-badge {display: flex; align-items: center; gap: 5px; color: #1ed760; font-size: 0.68rem;}
     .live-dot {width: 8px; height: 8px; background: #1ed760; border-radius: 50%; animation: pulse 2s infinite;}
