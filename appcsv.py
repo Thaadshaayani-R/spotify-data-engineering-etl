@@ -75,7 +75,7 @@ def inject_css():
         background: linear-gradient(90deg, #1f4e79, #2980b9);
         padding: 0.2rem 0.5rem;      /* reduced padding */
         border-radius: 10px;
-        margin: -4rem 0.5rem 0.5rem 0.5rem;  /* reduce top/bottom spacing */
+        margin: -5rem 0.5rem 0.5rem 0.5rem;  /* reduce top/bottom spacing */
     }
     .header-title {font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0;}
     .header-sub {font-size: 0.68rem; color: #fff; margin-top: 2px;}
