@@ -520,7 +520,9 @@ def main():
     st.sidebar.title("Navigation")
     section = st.sidebar.selectbox(
         "Select Dashboard:",
-        ["Overview", "Top Songs", "Top Artists", "Analytics"]
+        ["Overview", "Top Songs", "Top Artists", "Analytics"],
+        index=0,
+        key="nav_select"
     )
     
     # Sidebar info
