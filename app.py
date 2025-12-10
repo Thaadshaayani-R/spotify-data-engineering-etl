@@ -64,9 +64,14 @@ def inject_css():
     #MainMenu, footer, header {visibility: hidden;}
     .stDeployButton {display: none;}
 
+
+
     .main .block-container {
-        padding: 0.5rem 1.5rem;
+        padding: 0rem 1.5rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
         max-width: 100%;
+        min-height: auto;
     }
 
         /* Remove bottom padding */
