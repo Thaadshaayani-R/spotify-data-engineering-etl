@@ -69,7 +69,7 @@ def inject_css():
     .main .block-container {
         padding: 0rem 1.5rem;
         padding-top: 0rem;
-        padding-bottom: 0rem;
+        padding-bottom: -5rem;
         max-width: 100%;
         min-height: auto;
     }
