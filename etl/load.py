@@ -29,7 +29,7 @@ def _get_table(table_name: str) -> Table:
 
 def upsert_df(df: pd.DataFrame, table_name: str, pk: str):
     if df.empty:
-        print(f"⚠️ No data for table {table_name}. Skipping.")
+        print(f"No data for table {table_name}. Skipping.")
         return
 
     table = _get_table(table_name)
@@ -44,13 +44,13 @@ def upsert_df(df: pd.DataFrame, table_name: str, pk: str):
 
             conn.execute(stmt)
 
-    print(f"✅ Loaded {len(df)} rows into {table_name}")
+    print(f"Loaded {len(df)} rows into {table_name}")
 
 
 def load_to_mysql(tracks_df, artists_df):
-    print("📥 Loading into MySQL…")
+    print("Loading into MySQL…")
 
     upsert_df(artists_df, "artists", "artist_id")
     upsert_df(tracks_df, "tracks", "track_id")
 
-    print("✨ Load complete!")
+    print("Load complete!")
