@@ -79,7 +79,7 @@ def inject_css():
         background: linear-gradient(90deg, #1f4e79, #2980b9);
         padding: 0.6rem;
         border-radius: 10px;
-        margin: -6rem -0.5rem -1rem -0.5rem;
+        margin: -6rem -0.5rem -6rem -0.5rem;
     }
 
 
