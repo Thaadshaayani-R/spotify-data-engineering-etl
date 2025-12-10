@@ -4,9 +4,7 @@ import pandas as pd
 from typing import List, Dict, Any
 
 
-# ----------------------------------------------------
 # NORMALIZE TRACKS
-# ----------------------------------------------------
 def normalize_tracks(raw_items: List[Dict[str, Any]],
                      playlist_name: str,
                      playlist_id: str) -> pd.DataFrame:
@@ -36,10 +34,7 @@ def normalize_tracks(raw_items: List[Dict[str, Any]],
     df = pd.DataFrame(rows).drop_duplicates(subset=["track_id"])
     return df
 
-
-# ----------------------------------------------------
 # NORMALIZE ARTISTS
-# ----------------------------------------------------
 def normalize_artists(track_df: pd.DataFrame) -> pd.DataFrame:
     artists = track_df[["artist_id", "artist_name"]].drop_duplicates()
     artists["genres"] = None
@@ -48,9 +43,7 @@ def normalize_artists(track_df: pd.DataFrame) -> pd.DataFrame:
     return artists
 
 
-# ----------------------------------------------------
 # ARTIST ENRICHMENT
-# ----------------------------------------------------
 def enrich_artists(artists_df: pd.DataFrame, client) -> pd.DataFrame:
     """Fetch genres, followers, popularity for each unique artist."""
     enriched_rows = []
@@ -71,9 +64,7 @@ def enrich_artists(artists_df: pd.DataFrame, client) -> pd.DataFrame:
     return pd.DataFrame(enriched_rows)
 
 
-# ----------------------------------------------------
 # MAIN TRANSFORM PIPELINE
-# ----------------------------------------------------
 def transform(raw_tracks: List[Dict[str, Any]],
               playlist_name: str,
               playlist_id: str,
