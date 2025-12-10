@@ -82,6 +82,7 @@ def inject_css():
         margin: -6rem -0.5rem 0.5rem -0.5rem;
     }
 
+
     /* Metric Container */
     .metric-container {
         background: rgba(45, 55, 72, 0.9);
@@ -526,20 +527,39 @@ def main():
     st.markdown('<div class="main-header">🎧 Spotify BTS Analytics</div>', unsafe_allow_html=True)
     
     # -----------------------------------------
-    # TOP METRICS ROW (Always visible)
+    # TOP METRICS ROW (Only show on non-Overview sections)
     # -----------------------------------------
-    total_tracks = len(tracks_df)
-    unique_songs = tracks_df["base_name"].nunique()
-    num_artists = artists_df["artist_name"].nunique()
-    avg_pop = tracks_df["popularity"].mean()
-    max_pop = tracks_df["popularity"].max()
-    
-    m1, m2, m3, m4, m5 = st.columns(5)
-    m1.metric("Total Tracks", f"{total_tracks:,}")
-    m2.metric("Unique Songs", f"{unique_songs}")
-    m3.metric("Artists", f"{num_artists}")
-    m4.metric("Avg Popularity", f"{avg_pop:.0f}")
-    m5.metric("Max Popularity", f"{max_pop}")
+    if section != "Overview":
+        total_tracks = len(tracks_df)
+        unique_songs = tracks_df["base_name"].nunique()
+        num_artists = artists_df["artist_name"].nunique()
+        avg_pop = tracks_df["popularity"].mean()
+        max_pop = tracks_df["popularity"].max()
+        
+        st.markdown(f"""
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; margin-bottom: 1rem;">
+            <div class="metric-container">
+                <div class="metric-label">Total Tracks</div>
+                <div class="metric-value">{total_tracks:,}</div>
+            </div>
+            <div class="metric-container">
+                <div class="metric-label">Unique Songs</div>
+                <div class="metric-value">{unique_songs}</div>
+            </div>
+            <div class="metric-container">
+                <div class="metric-label">Artists</div>
+                <div class="metric-value">{num_artists}</div>
+            </div>
+            <div class="metric-container">
+                <div class="metric-label">Avg Popularity</div>
+                <div class="metric-value">{avg_pop:.0f}</div>
+            </div>
+            <div class="metric-container">
+                <div class="metric-label">Max Popularity</div>
+                <div class="metric-value">{max_pop}</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     st.markdown("---")
     
