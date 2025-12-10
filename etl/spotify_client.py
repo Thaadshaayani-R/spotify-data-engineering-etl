@@ -31,9 +31,7 @@ class SpotifyClient:
         self.api_base = "https://api.spotify.com/v1"
         self.access_token = None
 
-    # ----------------------------------------------------
     # AUTHENTICATION
-    # ----------------------------------------------------
     def authenticate(self):
         """Authenticate using Client Credentials Flow."""
         auth_str = f"{self.client_id}:{self.client_secret}"
@@ -60,9 +58,7 @@ class SpotifyClient:
             self.authenticate()
         return {"Authorization": f"Bearer {self.access_token}"}
 
-    # ----------------------------------------------------
     # PLAYLIST TRACKS
-    # ----------------------------------------------------
     def get_playlist_tracks(self, playlist_id: str) -> List[Dict[str, Any]]:
         """Returns all track items from a playlist with pagination."""
         all_items = []
@@ -92,9 +88,7 @@ class SpotifyClient:
 
         return all_items
 
-    # ----------------------------------------------------
     # ARTIST DETAILS
-    # ----------------------------------------------------
     def get_artist(self, artist_id: str) -> Dict[str, Any]:
         """Fetch detailed artist information."""
         url = f"{self.api_base}/artists/{artist_id}"
@@ -103,7 +97,7 @@ class SpotifyClient:
         resp = requests.get(url, headers=headers)
 
         if resp.status_code == 403:
-            print("⚠️ Artist details unavailable (403 Forbidden)")
+            print("Artist details unavailable (403 Forbidden)")
             return {}
 
         if resp.status_code != 200:
