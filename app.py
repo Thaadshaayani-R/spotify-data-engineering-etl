@@ -381,7 +381,7 @@ def render_artists(tracks_df, artists_df):
         
         display_df = artist_stats.head(10).copy()
         display_df["Artist"] = display_df.apply(
-            lambda r:{r['artist_name']}" if r["is_bts"] else r["artist_name"],
+            lambda r: f"💜 {r['artist_name']}" if r["is_bts"] else r["artist_name"],
             axis=1
         )
         display_df["Followers"] = display_df["followers"].apply(
