@@ -74,21 +74,23 @@ def inject_css():
         min-height: auto;
     }
 
-    /* Force remove bottom space */
-    #root > div:nth-child(1) > div > div > div > div > section > div {
-        padding-bottom: 0 !important;
+    /* Only fix bottom space - targeted approach */
+    .main .block-container {
+        padding: 0.5rem 1.5rem 1rem 1.5rem;
+        max-width: 100%;
     }
     
-    .stApp {
-        margin-bottom: -100px;
+    footer {
+        display: none !important;
     }
     
-    [data-testid="stAppViewContainer"] {
-        padding-bottom: 0 !important;
+    /* Hide Streamlit's default footer that creates space */
+    .reportview-container .main footer {
+        display: none !important;
     }
     
-    [data-testid="stVerticalBlock"] {
-        gap: 0rem;
+    [data-testid="stFooter"] {
+        display: none !important;
     }
     
     /* Reduce gap between elements */
