@@ -72,29 +72,18 @@ def inject_css():
         min-height: auto;
     }
 
-    /* Fix selectbox - remove editable appearance */
+    /* Change text cursor to pointer in selectbox */
     [data-testid="stSelectbox"] input {
-        caret-color: transparent !important;
         cursor: pointer !important;
+        caret-color: transparent !important;
     }
     
     [data-testid="stSelectbox"] [data-baseweb="select"] {
         cursor: pointer !important;
     }
     
-    /* Make it look like a proper dropdown */
-    [data-testid="stSelectbox"] [data-baseweb="input"] {
-        pointer-events: none;
-    }
-
-    /* Target only the bottom space */
-    .stApp [data-testid="stAppViewContainer"] {
-        min-height: 100vh;
-        padding-bottom: 0 !important;
-    }
-    
-    .stApp [data-testid="stVerticalBlockBorderWrapper"]:last-child {
-        margin-bottom: 0 !important;
+    [data-testid="stSelectbox"] div {
+        cursor: pointer !important;
     }
 
     /* Header */
