@@ -72,6 +72,21 @@ def inject_css():
         min-height: auto;
     }
 
+    /* Fix selectbox - remove editable appearance */
+    [data-testid="stSelectbox"] input {
+        caret-color: transparent !important;
+        cursor: pointer !important;
+    }
+    
+    [data-testid="stSelectbox"] [data-baseweb="select"] {
+        cursor: pointer !important;
+    }
+    
+    /* Make it look like a proper dropdown */
+    [data-testid="stSelectbox"] [data-baseweb="input"] {
+        pointer-events: none;
+    }
+
     /* Target only the bottom space */
     .stApp [data-testid="stAppViewContainer"] {
         min-height: 100vh;
