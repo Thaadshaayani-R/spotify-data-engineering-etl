@@ -463,7 +463,7 @@ def render_analytics(tracks_df):
         st.bar_chart(pop_chart_df, x="Range", y="Tracks", height=200)
         
         high_pop = tracks_df[tracks_df["popularity"] >= 60].shape[0]
-        st.caption(f"📈 {high_pop} tracks ({high_pop*100//len(tracks_df)}%) have popularity 60+")
+        st.caption(f"{high_pop} tracks ({high_pop*100//len(tracks_df)}%) have popularity 60+")
     
     with col2:
         st.markdown('<div class="section-header">Duration Distribution</div>', unsafe_allow_html=True)
