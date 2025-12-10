@@ -74,30 +74,26 @@ def inject_css():
         min-height: auto;
     }
 
-        /* Remove bottom padding */
-    .main .block-container {
-        padding-bottom: 0rem;
-    }
-    
-    /* Remove extra space at bottom of main area */
-    .main {
-        overflow: hidden;
-    }
-    
-    /* Make footer stick closer */
-    .footer {
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-        padding-bottom: 0.5rem;
-    }
-    
-    /* Remove default streamlit bottom padding */
-    .stApp > header + div {
+    /* Force remove bottom space */
+    #root > div:nth-child(1) > div > div > div > div > section > div {
         padding-bottom: 0 !important;
     }
     
-    section.main > div {
-        padding-bottom: 0rem;
+    .stApp {
+        margin-bottom: -100px;
+    }
+    
+    [data-testid="stAppViewContainer"] {
+        padding-bottom: 0 !important;
+    }
+    
+    [data-testid="stVerticalBlock"] {
+        gap: 0rem;
+    }
+    
+    /* Reduce gap between elements */
+    .element-container {
+        margin-bottom: 0 !important;
     }
 
     /* Header */
