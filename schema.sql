@@ -1,12 +1,8 @@
--- --------------------------------------------------
 -- DATABASE SETUP
--- --------------------------------------------------
 CREATE DATABASE IF NOT EXISTS spotify_bts;
 USE spotify_bts;
 
--- --------------------------------------------------
 -- TABLE: artists
--- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS artists (
     artist_id VARCHAR(50) PRIMARY KEY,
     artist_name VARCHAR(255) NOT NULL,
@@ -16,9 +12,7 @@ CREATE TABLE IF NOT EXISTS artists (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- --------------------------------------------------
 -- TABLE: tracks
--- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS tracks (
     track_id VARCHAR(50) PRIMARY KEY,
     track_name VARCHAR(255) NOT NULL,
