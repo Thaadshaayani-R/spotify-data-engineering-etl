@@ -311,9 +311,9 @@ def render_songs(tracks_df):
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown('<div class="section-header">Most Frequent Songs (TOP 15)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-header">Most Frequent Songs (TOP 10)</div>', unsafe_allow_html=True)
         
-        display_df = song_stats.head(15)[["Song", "Artist", "Versions", "Max Pop"]]
+        display_df = song_stats.head(10)[["Song", "Artist", "Versions", "Max Pop"]]
         st.dataframe(
             display_df,
             use_container_width=True,
