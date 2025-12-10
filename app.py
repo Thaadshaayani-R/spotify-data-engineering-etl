@@ -63,45 +63,14 @@ def inject_css():
 
     #MainMenu, footer, header {visibility: hidden;}
     .stDeployButton {display: none;}
-
-    /* Fix: Remove empty space below footer */
-    .stApp {
-        height: auto !important;
-        min-height: 100vh;
-    }
-    
-    [data-testid="stAppViewContainer"] > div:first-child {
-        height: auto !important;
-        min-height: 0 !important;
-    }
-    
-    /* Make main area only as tall as content */
-    section.main {
-        height: auto !important;
-        overflow: visible !important;
-    }
     
     .main .block-container {
-        padding-bottom: 0 !important;
-        min-height: 0 !important;
+        padding: 0rem 1.5rem;
+        padding-top: 0rem;
+        padding-bottom: -5rem;
+        max-width: 100%;
+        min-height: auto;
     }
-    
-    /* Hide Streamlit's empty bottom block */
-    [data-testid="stBottom"] {
-        display: none !important;
-    }
-    
-    [data-testid="stBottomBlockContainer"] {
-        display: none !important;
-    }
-    
-    # .main .block-container {
-    #     padding: 0rem 1.5rem;
-    #     padding-top: 0rem;
-    #     padding-bottom: -5rem;
-    #     max-width: 100%;
-    #     min-height: auto;
-    # }
 
     /* Target only the bottom space */
     .stApp [data-testid="stAppViewContainer"] {
