@@ -1,4 +1,4 @@
-# check_data.py - Diagnostic script to check your MySQL data
+# check_data.py
 
 import os
 import pandas as pd
