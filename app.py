@@ -386,10 +386,10 @@ def render_artists(tracks_df, artists_df):
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.markdown('<div class="section-header">All Artists (TOP 15)</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-header">All Artists (TOP 10)</div>', unsafe_allow_html=True)
         st.caption("💜 = BTS or BTS member")
         
-        display_df = artist_stats.head(15).copy()
+        display_df = artist_stats.head(10).copy()
         display_df["Artist"] = display_df.apply(
             lambda r: f"💜 {r['artist_name']}" if r["is_bts"] else r["artist_name"],
             axis=1
