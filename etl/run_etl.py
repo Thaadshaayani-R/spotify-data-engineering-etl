@@ -7,19 +7,19 @@ from etl.config import DEFAULT_PLAYLIST_ID, DEFAULT_PLAYLIST_NAME
 
 
 def main():
-    print("\n🚀 Starting Spotify BTS ETL Pipeline...")
+    print("\n Starting Spotify BTS ETL Pipeline...")
 
     # 1. Extract
     client = SpotifyClient()
     client.authenticate()
-    print("🔑 Authenticated with Spotify API.")
+    print("Authenticated with Spotify API.")
 
-    print(f"\n📌 Fetching playlist: {DEFAULT_PLAYLIST_NAME}")
+    print(f"\n Fetching playlist: {DEFAULT_PLAYLIST_NAME}")
     raw_tracks = client.get_playlist_tracks(DEFAULT_PLAYLIST_ID)
-    print(f"🎧 Extracted {len(raw_tracks)} tracks.")
+    print(f" Extracted {len(raw_tracks)} tracks.")
 
     # 2. Transform (includes artist enrichment)
-    print("\n🔄 Transforming data...")
+    print("\n Transforming data...")
     tracks_df, artists_df = transform(
         raw_tracks,
         DEFAULT_PLAYLIST_NAME,
@@ -27,7 +27,7 @@ def main():
         client
     )
 
-    print("📊 DataFrames:")
+    print("DataFrames:")
     print(f"- Tracks: {tracks_df.shape}")
     print(f"- Artists: {artists_df.shape}")
 
