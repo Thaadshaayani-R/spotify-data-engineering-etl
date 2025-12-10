@@ -1,4 +1,4 @@
-# app.py - BTS Spotify Dashboard (Clean & Simple) - MySQL Version
+# app.py 
 
 import os
 from pathlib import Path
@@ -10,18 +10,14 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 import pymysql
 
-# -------------------------------------------------
 # CONFIG
-# -------------------------------------------------
 load_dotenv()
 
 # BTS Members
 BTS_MEMBERS = ["BTS", "RM", "Jin", "j-hope", "Jimin", "V", "Jung Kook", "Agust D", "SUGA"]
 
 
-# -------------------------------------------------
-# DATA (MySQL instead of CSV)
-# -------------------------------------------------
+# DATA (MySQL)
 @st.cache_data(ttl=300)
 def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
     """Load tracks & artists directly from MySQL instead of CSV."""
@@ -41,10 +37,7 @@ def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
         st.error(f"Unable to connect to MySQL: {e}")
         st.stop()
 
-
-# -------------------------------------------------
 # DATA PROCESSING
-# -------------------------------------------------
 def process_tracks(df: pd.DataFrame) -> pd.DataFrame:
     """Add base_name and is_bts columns."""
     df = df.copy()
@@ -59,9 +52,7 @@ def process_tracks(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# -------------------------------------------------
 # CUSTOM CSS
-# -------------------------------------------------
 def inject_css():
     st.markdown("""
     <style>
@@ -121,9 +112,7 @@ def inject_css():
     """, unsafe_allow_html=True)
 
 
-# -------------------------------------------------
 # COMPONENTS
-# -------------------------------------------------
 def render_header():
     st.markdown("""
     <div class="header-box">
@@ -180,10 +169,7 @@ def render_footer():
     </div>
     """, unsafe_allow_html=True)
 
-
-# -------------------------------------------------
 # MAIN APP
-# -------------------------------------------------
 def main():
     st.set_page_config(
         page_title="Spotify BTS Analytics",
@@ -210,9 +196,7 @@ def main():
     # Tabs
     tab1, tab2, tab3 = st.tabs(["Top Songs", "Top Artists", "Analytics"])
     
-    # =============================================
     # TAB 1: TOP SONGS
-    # =============================================
     with tab1:
         song_stats = (
             tracks_df
@@ -243,9 +227,7 @@ def main():
         col2.metric("Hit Songs (80+ Pop)", f"{high_pop_songs}")
         col3.metric("Highest Popularity", f"{song_stats['Max Pop'].max()}")
     
-    # =============================================
     # TAB 2: TOP ARTISTS
-    # =============================================
     with tab2:
         artist_stats = (
             tracks_df
@@ -294,9 +276,7 @@ def main():
         col2.metric("Collaboration Tracks", f"{collab_total}")
         col3.metric("Total Collaborators", f"{len(artist_stats[artist_stats['is_bts'] == False])}")
     
-    # =============================================
     # TAB 3: ANALYTICS
-    # =============================================
     with tab3:
         col1, col2 = st.columns(2)
         
