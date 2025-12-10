@@ -118,7 +118,7 @@ def inject_css():
         font-size: 0.9rem;
         font-weight: bold;
         color: #FFFFFF;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.1rem;
         padding: 0.2rem 0;
         border-bottom: 2px solid #00d4aa;
     }
@@ -128,7 +128,7 @@ def inject_css():
         font-size: 1.2rem;
         text-align: center;
         font-weight: bold;
-        margin: 0.1rem 0.5rem 0;
+        margin: 0.5rem 0;
     }
 
     /* Sidebar */
