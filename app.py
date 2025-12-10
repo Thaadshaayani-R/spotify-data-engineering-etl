@@ -69,6 +69,32 @@ def inject_css():
         max-width: 100%;
     }
 
+        /* Remove bottom padding */
+    .main .block-container {
+        padding-bottom: 0rem;
+    }
+    
+    /* Remove extra space at bottom of main area */
+    .main {
+        overflow: hidden;
+    }
+    
+    /* Make footer stick closer */
+    .footer {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        padding-bottom: 0.5rem;
+    }
+    
+    /* Remove default streamlit bottom padding */
+    .stApp > header + div {
+        padding-bottom: 0 !important;
+    }
+    
+    section.main > div {
+        padding-bottom: 0rem;
+    }
+
     /* Header */
     .main-header {
         font-size: 1.8rem;
