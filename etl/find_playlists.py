@@ -1,7 +1,7 @@
 from etl.spotify_client import SpotifyClient
 
 def main():
-    print("\n🔍 Searching for playlists containing 'BTS'...\n")
+    print("\nSearching for playlists containing 'BTS'...\n")
 
     client = SpotifyClient()
     client.authenticate()
