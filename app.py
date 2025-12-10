@@ -484,7 +484,7 @@ def render_analytics(tracks_df):
         st.bar_chart(dur_chart_df, x="Range", y="Tracks", height=200)
         
         standard = tracks_df[(tracks_df["duration_min"] >= 2) & (tracks_df["duration_min"] < 4)].shape[0]
-        st.caption(f"🎵 {standard} tracks ({standard*100//len(tracks_df)}%) are 2-4 min")
+        st.caption(f"{standard} tracks ({standard*100//len(tracks_df)}%) are 2-4 min")
     
     # Data Quality Row
     st.markdown('<div class="section-header">Data Quality</div>', unsafe_allow_html=True)
