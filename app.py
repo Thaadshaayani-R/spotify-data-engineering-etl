@@ -1,4 +1,4 @@
-# app.py - BTS Spotify Dashboard (Professional Redesign)
+# app.py
 
 import os
 from pathlib import Path
@@ -8,9 +8,7 @@ import numpy as np
 import streamlit as st
 from dotenv import load_dotenv
 
-# -------------------------------------------------
 # CONFIG
-# -------------------------------------------------
 load_dotenv()
 
 DATA_DIR = Path("data")
@@ -21,9 +19,7 @@ ARTISTS_CSV = DATA_DIR / "artists.csv"
 BTS_MEMBERS = ["BTS", "RM", "Jin", "j-hope", "Jimin", "V", "Jung Kook", "Agust D", "SUGA"]
 
 
-# -------------------------------------------------
 # DATA LOADING
-# -------------------------------------------------
 @st.cache_data(ttl=300)
 def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
     try:
@@ -35,9 +31,7 @@ def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
         st.stop()
 
 
-# -------------------------------------------------
 # DATA PROCESSING
-# -------------------------------------------------
 def process_tracks(df: pd.DataFrame) -> pd.DataFrame:
     """Add base_name and is_bts columns."""
     df = df.copy()
@@ -53,9 +47,7 @@ def process_tracks(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-# -------------------------------------------------
 # CUSTOM CSS
-# -------------------------------------------------
 def inject_css():
     st.markdown("""
     <style>
@@ -197,9 +189,7 @@ def inject_css():
     """, unsafe_allow_html=True)
 
 
-# -------------------------------------------------
 # SECTIONS
-# -------------------------------------------------
 
 def render_overview(tracks_df, artists_df):
     """Overview / Summary section like Country Profile"""
@@ -496,9 +486,7 @@ def render_analytics(tracks_df):
     c4.metric("Max Popularity", f"{tracks_df['popularity'].max()}")
 
 
-# -------------------------------------------------
 # MAIN APP
-# -------------------------------------------------
 def main():
     st.set_page_config(
         page_title="Spotify BTS Analytics",
@@ -518,9 +506,7 @@ def main():
     
     tracks_df = process_tracks(tracks_df)
     
-    # -----------------------------------------
     # SIDEBAR NAVIGATION
-    # -----------------------------------------
     st.sidebar.title("Navigation")
     section = st.sidebar.selectbox(
         "Select Dashboard:",
@@ -540,14 +526,11 @@ def main():
     </div>
     """, unsafe_allow_html=True)
     
-    # -----------------------------------------
     # HEADER
-    # -----------------------------------------
     st.markdown('<div class="main-header">🎧 Spotify BTS Analytics</div>', unsafe_allow_html=True)
     
-    # -----------------------------------------
-    # TOP METRICS ROW (Only show on non-Overview sections)
-    # -----------------------------------------
+
+    # TOP METRICS ROW
     if section != "Overview":
         total_tracks = len(tracks_df)
         unique_songs = tracks_df["base_name"].nunique()
@@ -582,9 +565,7 @@ def main():
     
     # st.markdown("---")
     
-    # -----------------------------------------
     # RENDER SELECTED SECTION
-    # -----------------------------------------
     if section == "Overview":
         render_overview(tracks_df, artists_df)
     elif section == "Top Songs":
@@ -594,9 +575,7 @@ def main():
     elif section == "Analytics":
         render_analytics(tracks_df)
     
-    # -----------------------------------------
     # FOOTER
-    # -----------------------------------------
     st.markdown("""
     <div class="footer">
         BTS Complete Discography • Spotify API • Python + MySQL • Streamlit
