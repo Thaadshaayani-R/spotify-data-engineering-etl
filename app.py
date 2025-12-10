@@ -568,7 +568,7 @@ def main():
         max_pop = tracks_df["popularity"].max()
         
         st.markdown(f"""
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; margin: -1.5rem 0 1rem;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; margin: -1.5rem 0 2rem;">
             <div class="metric-container">
                 <div class="metric-label">Total Tracks</div>
                 <div class="metric-value">{total_tracks:,}</div>
