@@ -308,7 +308,7 @@ def render_songs(tracks_df):
             display_df,
             use_container_width=True,
             hide_index=True,
-            height=390,
+            height=320,
             column_config={
                 "Song": st.column_config.TextColumn("Song", width="medium"),
                 "Artist": st.column_config.TextColumn("Artist", width="small"),
@@ -393,7 +393,7 @@ def render_artists(tracks_df, artists_df):
             display_df[["Artist", "Tracks", "Avg Pop", "Followers"]],
             use_container_width=True,
             hide_index=True,
-            height=390
+            height=320
         )
     
     with col2:
