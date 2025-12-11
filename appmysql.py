@@ -16,7 +16,6 @@ load_dotenv()
 # BTS Members
 BTS_MEMBERS = ["BTS", "RM", "Jin", "j-hope", "Jimin", "V", "Jung Kook", "Agust D", "SUGA"]
 
-
 # DATA (MySQL)
 @st.cache_data(ttl=300)
 def load_data() -> Tuple[pd.DataFrame, pd.DataFrame]:
@@ -249,11 +248,10 @@ def main():
         )
         
         st.markdown('<div class="section-title">🎤 Artist Rankings <span class="badge">ALL ARTISTS</span></div>', unsafe_allow_html=True)
-        st.caption("💜 = BTS or BTS member (RM, Jin, j-hope, Jimin, V, Jung Kook, Agust D)")
         
         display_df = artist_stats.head(20).copy()
         display_df["Artist"] = display_df.apply(
-            lambda r: f"💜 {r['artist_name']}" if r["is_bts"] else r["artist_name"],
+            lambda r: f" {r['artist_name']}" if r["is_bts"] else r["artist_name"],
             axis=1
         )
         display_df["Followers"] = display_df["followers"].apply(
@@ -299,7 +297,7 @@ def main():
             st.bar_chart(pop_chart_df, x="Range", y="Tracks", height=300)
             
             high_pop = tracks_df[tracks_df["popularity"] >= 60].shape[0]
-            st.caption(f"📈 {high_pop} tracks ({high_pop*100//len(tracks_df)}%) have popularity 60+")
+            st.caption(f" {high_pop} tracks ({high_pop*100//len(tracks_df)}%) have popularity 60+")
         
         with col2:
             st.markdown('<div class="section-title">Song Duration</div>', unsafe_allow_html=True)
@@ -322,7 +320,7 @@ def main():
             st.bar_chart(dur_chart_df, x="Range", y="Tracks", height=300)
             
             standard = tracks_df[(tracks_df["duration_min"] >= 2) & (tracks_df["duration_min"] < 4)].shape[0]
-            st.caption(f"🎵 {standard} tracks ({standard*100//len(tracks_df)}%) are 2-4 min (radio length)")
+            st.caption(f" {standard} tracks ({standard*100//len(tracks_df)}%) are 2-4 min (radio length)")
         
         st.markdown("---")
         st.markdown('<div class="section-title">Data Quality</div>', unsafe_allow_html=True)
@@ -334,7 +332,6 @@ def main():
         c4.metric("Max Popularity", f"{tracks_df['popularity'].max()}")
     
     render_footer()
-
 
 if __name__ == "__main__":
     main()
