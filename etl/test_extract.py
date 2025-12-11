@@ -2,7 +2,6 @@
 
 from etl.spotify_client import SpotifyClient
 
-
 def main():
     print("\n Testing Spotify Extraction...")
     client = SpotifyClient()
@@ -36,9 +35,6 @@ def main():
             valid_track_ids.append(t["track"]["id"])
             if len(valid_track_ids) == 5:
                 break
-
-
-
 
 if __name__ == "__main__":
     main()
