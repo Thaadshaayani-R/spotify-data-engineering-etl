@@ -21,21 +21,24 @@ This dual approach allows both real-time database analytics and cloud-friendly d
 # 2. Architecture
 High-Level Architecture Diagram
 
-               Spotify API
-                    ▼
-                Python ETL          
-        Extract • Transform • Load            
-        └───────────────────────┘
-                    ▼
-               MySQL Database
-        ┌───────────┴───────────────┐   
-        ▼                           ▼
-  CSV Export Layer           Streamlit Dashboard
-  (tracks.csv,               (Local • uses MySQL)
-   artists.csv)
-        ▼
+```text
+Spotify API
+    ▼
+Python ETL
+Extract • Transform • Load
+    └───────────────────────┘
+           ▼
+MySQL Database
+   ┌───────────┴───────────┐
+   ▼                       ▼
+CSV Export Layer      Streamlit Dashboard
+(tracks.csv,          (Local • uses MySQL)
+ artists.csv)
+   ▼
 Streamlit Cloud Dashboard
 (Cloud • uses CSV files)
+```
+
 
 
 # 3. Features
