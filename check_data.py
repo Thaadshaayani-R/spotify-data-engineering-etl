@@ -21,7 +21,7 @@ print("=" * 60)
 
 try:
     engine = create_engine(DB_URL, echo=False)
-    print(f"✅ Connected to: {MYSQL_DB}")
+    print(f" Connected to: {MYSQL_DB}")
     print()
     
     # Load tracks
@@ -91,4 +91,4 @@ try:
     print(artists.head(3).to_string())
     
 except Exception as e:
-    print(f"❌ ERROR: {e}")
+    print(f" ERROR: {e}")
