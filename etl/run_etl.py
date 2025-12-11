@@ -5,7 +5,6 @@ from etl.transform import transform
 from etl.load import load_to_mysql
 from etl.config import DEFAULT_PLAYLIST_ID, DEFAULT_PLAYLIST_NAME
 
-
 def main():
     print("\n Starting Spotify BTS ETL Pipeline...")
 
@@ -34,8 +33,7 @@ def main():
     # 3. Load
     load_to_mysql(tracks_df, artists_df)
 
-    print("\n🎉 ETL Pipeline Completed Successfully!")
-
+    print("\n ETL Pipeline Completed Successfully!")
 
 if __name__ == "__main__":
     main()
