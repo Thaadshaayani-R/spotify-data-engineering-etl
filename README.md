@@ -24,17 +24,14 @@ High-Level Architecture Diagram
                Spotify API
                     │
                     ▼
-        ┌──────────────────────────┐
+        ┌────────────────────────┐
         │      Python ETL          │
         │  Extract • Transform •   │
         │          Load            │
         └───────────┬──────────────┘
-                    │
                     ▼
                MySQL Database
-                    │
-        ┌───────────┴───────────────┐
-        │                           │
+        ┌───────────┴───────────────┐                         │
         ▼                           ▼
   CSV Export Layer           Streamlit Dashboard
   (tracks.csv,               (Local • uses MySQL)
