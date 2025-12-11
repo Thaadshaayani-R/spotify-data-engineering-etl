@@ -65,6 +65,7 @@ Storage
 
 # 4. Project Structure
 
+```text
 project/
 │
 ├── etl/
@@ -79,12 +80,14 @@ project/
 │   ├── tracks.csv
 │   ├── artists.csv
 │
-├── appmysql.py          # Local dashboard (MySQL)
-├── appcsv.py            # Cloud dashboard (CSV)
+├── appmysql.py        # Local dashboard (MySQL)
+├── appcsv.py          # Cloud dashboard (CSV)
 ├── export_to_csv.py
 ├── schema.sql
 ├── requirements.txt
 └── README.md
+```
+
 
 # 5. Setup Instructions
  # 5.1 Install Dependencies
